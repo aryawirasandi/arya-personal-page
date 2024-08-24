@@ -31,7 +31,7 @@ export const projects: Projects[] = [
 		id: 'bank-syariah-indonesia',
 		slug: 'bank-syariah-indonesia-project',
 		src: SyariahBankIndonesia,
-		title: 'Enterprise Risk Bank Syariah Indonesia',
+		title: 'Enterprise Risk BSI',
 		url: '-'
 	},
 	{
@@ -45,7 +45,7 @@ export const projects: Projects[] = [
 		id: 'sulselbar',
 		slug: 'sulselbar-project',
 		src: SulelbarProject,
-		title: 'Sistem Monitoring Divisi Umum Bank Sulselbar',
+		title: 'General E Monitoring Sulselbar',
 		url: '-'
 	}
 ];
