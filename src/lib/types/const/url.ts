@@ -1,0 +1,1 @@
+export const url = "https://www.linkedin.com/in/arya-wirasandi/"

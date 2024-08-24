@@ -6,13 +6,13 @@
 	<title>List of projects </title>
     <meta name="description" content="List of Projects">
 </svelte:head>
-<div class="mx-5 md:mx-10 mt-5">
+<div class="mx-5 md:mx-10 pt-5 text-white">
     <h1 class="underline text-4xl mb-3">Experience Projects!</h1>
     <p>The latest projects that i've been working on! </p>
     {#if projects.length > 0 }
-    <div class="w-full mx-auto my-10 md:w-full">
+    <div class="w-full mx-auto mt-10 md:w-full">
             {#each projects as project }
-                <Card extendClass="my-10">
+                <Card extendClass="mt-10">
                     {#if Array.isArray(project.src)}
                       {#each project.src as img }
                          <img src={img} alt="placeholder preview" class="w-full"/>

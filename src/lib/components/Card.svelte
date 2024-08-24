@@ -1,5 +1,7 @@
 <script lang="ts">
-    export let extendClass: string | undefined = undefined;
+	import type { typeVariant } from "$lib/data/type-variant";
+
+  export let extendClass: typeVariant<string> = undefined;
 </script>
 <div class={'bg-white shadow-md' + ' ' + extendClass || ""}>
     <slot/>

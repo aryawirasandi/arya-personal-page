@@ -1,0 +1,1 @@
+export type typeVariant<T> = T | undefined;
