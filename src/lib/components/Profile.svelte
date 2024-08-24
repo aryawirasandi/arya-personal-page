@@ -1,5 +1,4 @@
 <script>
-    import { url } from "$lib/types/const/url"
     import { onMount } from 'svelte';
     let condition = false;
     onMount(() => {

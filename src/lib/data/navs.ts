@@ -1,7 +1,7 @@
 import type { IComponentNavs } from '$lib/types/components/Navs';
 export let navs: IComponentNavs[] = [
 	{
-		id: 'home',
+		id: '',
 		name: 'Home',
 		href: '/',
 		alt: 'Home Page'
@@ -29,5 +29,11 @@ export let navs: IComponentNavs[] = [
 		name: 'Resume',
 		href: 'https://drive.google.com/file/d/1YegyiMzjOxVbg29xSZqwHAjklzw5h0MA/view?usp=sharing',
 		alt: 'Resume'
+	},
+	{
+		id: "contact",
+		name: "Contact",
+		href: "/contact",
+		alt: "Contact"
 	}
 ];
