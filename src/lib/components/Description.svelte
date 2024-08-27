@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { typeVariant } from "$lib/data/type-variant";
 	import { onMount } from "svelte";
-    import { fade, slide } from "svelte/transition";
+    import { slide } from "svelte/transition";
     export const classNameRoot: typeVariant<string>= "";
     export const classNAmeHeading: typeVariant<string> = "";
     export const classNameDescription: typeVariant<string> = "";
