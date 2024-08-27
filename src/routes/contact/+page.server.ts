@@ -44,7 +44,7 @@ export const actions: Actions = {
 
         return {
             success: true,
-            message: "success send the data",
+            message: "success send email!",
         }
     }
 }

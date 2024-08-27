@@ -15,15 +15,15 @@
 		showAnimate = true;
 	});
 	let show = false;
+	let ping = true;
 	const handleMenu = () => {
 		navs = [];
 		let index = 0;
 		show = !show;
 		let interval: any;
-
+        
 		if (show) {
 			interval = setInterval(() => {
-				console.log('test');
 				if (index < data.length) {
 					navs.push(data[index]);
 					navs = navs;
@@ -36,6 +36,15 @@
 
 		if (!show) clearInterval(interval);
 	};
+
+	onMount(() => {
+		let isBounce = localStorage.getItem("hold-ping");
+		if(isBounce !== null && isBounce === "true"){
+			ping = false;
+		}else{
+			ping = true;
+		}
+	})
 </script>
 
 {#if showAnimate}
@@ -58,7 +67,7 @@
 {#if show}
 	<nav
 		transition:fade={{ easing: cubicIn }}
-		class="xs:fixed xs:z-20 xs:w-full xs:bottom-0 xs:min-h-screen text-white p-[18px] bg-[#4801ff] block md:hiddden"
+		class="xs:fixed xs:z-50 xs:w-full xs:bottom-0 xs:min-h-screen text-white p-[18px] bg-[#4801ff] block md:hiddden"
 	>
 		{#if show}
 			<div class="relative">
@@ -92,14 +101,17 @@
 {/if}
 
 {#if showAnimate}
-	<div class="fixed bottom-5 right-5 z-20">
+	<div class="fixed bottom-5 right-5 z-50">
 		<button
 			transition:fly={{ easing: cubicIn }}
 			on:click={handleMenu}
-			on:click|once={() => (navTrigger = !navTrigger)}
+			on:click|once={() => {
+				localStorage.setItem("hold-ping", "true")
+				ping = false;
+			}}
 			class="rounded-full md:hidden bg-green-400 border-white border-solid border-2 relative text-white p-3"
 		>
-			{#if !navTrigger}
+			{#if ping}
 				<div
 					class="bg-green-400 animate-ping bottom-0 -left-1 h-[47.2px] w-[46.2px] rounded-full absolute"
 				></div>
