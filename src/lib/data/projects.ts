@@ -9,42 +9,42 @@ export const projects: Projects[] = [
 	{
 		id: 'first-media',
 		slug: 'first-media-project',
-		src: FirstMediProject,
+		src: "/assets/projects/project-firstmedia.png",
 		title: 'First Media',
 		url: 'https://www.firstmedia.com/'
 	},
 	{
 		id: 'nutriclub',
 		slug: 'nutriclub-club-project',
-		src: NutriclubProject,
+		src: '/assets/projects/project-nutriclub.png',
 		title: 'Nutriclub Revamp 2020',
 		url: 'https://www.nutriclub.co.id/'
 	},
 	{
 		id: 'sangfor',
 		slug: 'sangfor-project',
-		src: SangforProject,
+		src: '/assets/projects/project-sangfor.png',
 		title: 'Sangfor Revamp',
 		url: 'https://www.sangfor.com/'
 	},
 	{
 		id: 'bank-syariah-indonesia',
 		slug: 'bank-syariah-indonesia-project',
-		src: SyariahBankIndonesia,
+		src: '/assets/projects/project-bsi.png',
 		title: 'Enterprise Risk BSI',
 		url: '-'
 	},
 	{
 		id: 'dikampus',
 		slug: 'dikampus-project',
-		src: DikampusProject,
+		src: '/assets/projects/project-dikampus.png',
 		title: 'Dikampus',
 		url: 'https://dikampus-cbb63.firebaseapp.com/'
 	},
 	{
 		id: 'sulselbar',
 		slug: 'sulselbar-project',
-		src: SulelbarProject,
+		src: '/assets/projects/project-sulselbar.png',
 		title: 'General E Monitoring Sulselbar',
 		url: '-'
 	}

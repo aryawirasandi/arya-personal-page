@@ -38,6 +38,9 @@
 	"type": "module",
 	"dependencies": {
 		"@notionhq/client": "^2.2.14",
+		"inversify": "^6.0.2",
+		"nodemailer": "^6.9.14",
+		"reflect-metadata": "^0.2.2",
 		"swiper": "^11.0.7"
 	}
 }
