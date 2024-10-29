@@ -1,5 +1,3 @@
-
-
 <div class="min-h-screen flex justify-center flex-col">
    <div>
     <div style="margin-bottom: 20px">
