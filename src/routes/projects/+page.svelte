@@ -3,7 +3,7 @@
 	import { projects } from "$lib/data/projects";  
 	import { onMount } from "svelte";
 	import { slide } from "svelte/transition";
-    let showAnimate = false;
+    let showAnimate = $state(false);
     onMount(() => {
         showAnimate = true
     })
@@ -32,7 +32,7 @@
                             {#if project.url !== "-" }
                                 <a href={project.url} target="_blank" class="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-300 w-full block text-center md:inline md:w-auto">See The Projects</a>
                             {:else}
-                                <button on:click={() => alert("Sorry!, it's a private project so i can only show you a preview image")} class="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-300 w-full block text-center md:inline md:w-auto">
+                                <button onclick={() => alert("Sorry!, it's a private project so i can only show you a preview image")} class="p-2 bg-blue-500 text-white rounded-md hover:bg-blue-300 w-full block text-center md:inline md:w-auto">
                                     Intranet or Private Project
                                 </button>
                             {/if}

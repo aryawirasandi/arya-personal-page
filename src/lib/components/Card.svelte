@@ -1,8 +1,13 @@
 <script lang="ts">
 	import type { typeVariant } from "$lib/data/type-variant";
 
-  export let extendClass: typeVariant<string> = undefined;
+  interface Props {
+    extendClass?: typeVariant<string>;
+    children?: import('svelte').Snippet;
+  }
+
+  let { extendClass = undefined, children }: Props = $props();
 </script>
 <div class={'bg-white shadow-md' + ' ' + extendClass || ""}>
-    <slot/>
+    {@render children?.()}
 </div>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { skills } from "$lib/data/skilss"
-	import { cubicIn, quintOut } from 'svelte/easing';
+	import { quintOut } from 'svelte/easing';
 	import { flip } from 'svelte/animate'
 	import { onMount } from 'svelte';
 	let condition = false;

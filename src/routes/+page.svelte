@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import Typewritter from 'svelte-typewriter';
 	import { slide } from 'svelte/transition';
-	let showAnimate = false;
+	let showAnimate = $state(false);
 	onMount(() => {
 		showAnimate = true;
 	});
