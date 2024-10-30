@@ -1,7 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     let condition = false;
-    let showAnimate = false;
+    let showAnimate = $state(false);
     onMount(() => {
      showAnimate = true;
      condition = !condition

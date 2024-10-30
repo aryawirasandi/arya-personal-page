@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { once, handlers } from 'svelte/legacy';
+
 	import { navs as data } from '$lib/data/navs';
 	import { onMount } from 'svelte';
 	import hamburger from '$lib/assets/icons/hamburger.svg';
@@ -7,15 +9,15 @@
 	import { cubicIn, cubicInOut } from 'svelte/easing';
 	import type { IComponentNavs } from '$lib/types/components/Navs';
 	let pathName = '';
-	let showAnimate = false;
+	let showAnimate = $state(false);
 	let navTrigger = false;
-	let navs: IComponentNavs[] = [];
+	let navs: IComponentNavs[] = $state([]);
 	onMount(() => {
 		pathName = window.location.pathname.slice(1);
 		showAnimate = true;
 	});
-	let show = false;
-	let ping = true;
+	let show = $state(false);
+	let ping = $state(true);
 	const handleMenu = () => {
 		navs = [];
 		let index = 0;
@@ -74,11 +76,11 @@
 				<div
 				transition:slide={{ axis: 'y', delay: 500 }}
 				class="min-h-[500px] rotate-[320deg] min-w-full bg-green-400 absolute top-0 right-1/2 xs:min-h-0 xs:min-w-0 xs:top-0 xs:rotate-[120deg] xs:right-0 xs:h-[20rem] xs:w-[2rem]"
-			/>
+			></div>
 			<div
 				transition:slide={{ axis: 'x', delay: 500 }}
 				class="min-h-[500px] rotate-[320deg] min-w-full bg-green-400 absolute bottom-0 left-1/2 x xs:rotate-45 xs:min-h-0 xs:min-w-0 xs:-top-20 xs:left-80 xs:h-[20rem] xs:w-[2rem]"
-			/>
+			></div>
 			</div>
 		{/if}
 		{#if show}
@@ -88,7 +90,7 @@
 				{#each navs as { name, id, href, ...rest } (id)}
 					<li class="text-xl" transition:slide={{ axis: 'x', easing: cubicInOut }}>
 						<a
-							on:click={handleMenu}
+							onclick={handleMenu}
 							{href}
 							{...rest}
 							class="md:mr-[15px] text-white hover:text-green-400">{name}</a
@@ -104,11 +106,10 @@
 	<div class="fixed bottom-5 right-5 z-50">
 		<button
 			transition:fly={{ easing: cubicIn }}
-			on:click={handleMenu}
-			on:click|once={() => {
+			onclick={handlers(handleMenu, once(() => {
 				localStorage.setItem("hold-ping", "true")
 				ping = false;
-			}}
+			}))}
 			class="rounded-full md:hidden bg-green-400 border-white border-solid border-2 relative text-white p-3"
 		>
 			{#if ping}
